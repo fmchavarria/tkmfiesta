@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TKM Fiesta - Cumbia & Reggaetón</title>
+    
+    <!-- FAVICON CÍRCULO AZUL CON TKM -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%231e64cc'/><text x='50%' y='55%' font-family='sans-serif' font-weight='900' font-size='38' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>TKM</text></svg>">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="TKM Fiesta - Cumbia & Reggaetón">
+    <meta property="og:description" content="Cumbia, reggaetón y fiesta. Empieza temprano, termina temprano. Encontrá tus entradas acá.">
+    <meta property="og:image" content="LOGO.png">
+    <meta property="og:type" content="website">
+
+    <!-- FUENTES GOOGLE -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=VT323&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --azul-tkm: #1e64cc;
+            --azul-tkm-dark: #12438c;
+            --amarillo-tkm: #ffea00;
+            --bg-oscuro: #05070d;
+            --font-pixel: 'VT323', monospace;
+            --font-texto: 'Montserrat', sans-serif;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes ambientLight {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes scrollTicker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-texto);
+            color: #ffffff;
+            background-color: var(--bg-oscuro);
+            background-image: 
+                radial-gradient(circle at 15% 40%, rgba(30, 100, 204, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 85% 60%, rgba(18, 67, 140, 0.25) 0%, transparent 50%);
+            background-attachment: fixed;
+            background-size: 200% 200%;
+            animation: ambientLight 15s ease infinite;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 { 
+            margin-top: 0; 
+            text-transform: uppercase; 
+            font-family: var(--font-texto);
+            letter-spacing: 1px;
+            font-weight: 900; 
+        }
+        
+        a { text-decoration: none; }
+        section { padding: 50px 20px; max-width: 1100px; margin: 0 auto; }
+
+        /* BARRA SUPERIOR INFINITA */
+        .top-ticker {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--azul-tkm);
+            color: #ffffff;
+            font-family: var(--font-pixel);
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            padding: 5px 0;
+            z-index: 1000;
+            overflow: hidden;
+            white-space: nowrap;
+            box-shadow: 0 4px 20px rgba(30, 100, 204, 0.4);
+        }
+        .ticker-track {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scrollTicker 70s linear infinite;
+        }
+        .ticker-text {
+            display: inline-block;
+            padding-right: 30px;
+        }
+
+        .fade-in { opacity: 0; animation: fadeUp 0.8s ease-out forwards; }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        .delay-5 { animation-delay: 1s; }
+
+        /* HERO SECTION CON VIDEO EXPERIENCIA TKM */
+        .hero {
+            text-align: center;
+            padding: 130px 20px 60px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            min-height: 80vh;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 0.85;
+            filter: brightness(1.2) contrast(1.15);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                180deg, 
+                rgba(5, 7, 13, 0.4) 0%, 
+                rgba(5, 7, 13, 0.2) 60%, 
+                var(--bg-oscuro) 100%
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-logo {
+            width: 100%;
+            max-width: 250px;
+            min-width: 240px;
+            mix-blend-mode: screen;
+            padding: 10px; 
+            margin-bottom: 20px;
+            animation: float 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.9));
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--azul-tkm);
+            color: #ffffff;
+            padding: 16px 45px;
+            font-family: var(--font-texto);
+            font-weight: 900;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+        }
+        .btn:hover {
+            background: #ffffff;
+            color: #000000;
+            transform: translate(-2px, -2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
+        }
+
+        /* TICKET FÍSICO */
+        .ticket-wrapper {
+            max-width: 850px;
+            margin: 30px auto 50px;
+            padding: 0 10px;
+        }
+
+        .real-ticket {
+            display: flex;
+            background: linear-gradient(110deg, #102d59 0%, #061124 50%, #153c78 100%);
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(30, 100, 204, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(30, 100, 204, 0.4);
+
+            mask-image: 
+                radial-gradient(circle at 0 50%, transparent 12px, black 13px),
+                radial-gradient(circle at 100% 50%, transparent 12px, black 13px);
+            mask-composite: intersect;
+            -webkit-mask-image: 
+                radial-gradient(circle at 0 50%, transparent 12px, black 13px),
+                radial-gradient(circle at 100% 50%, transparent 12px, black 13px);
+            -webkit-mask-composite: destination-in;
+        }
+
+        .real-ticket:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 255, 255, 0.2);
+            border-color: #ffffff;
+        }
+
+        .ticket-main {
+            flex: 1;
+            padding: 35px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .ticket-title-main {
+            font-size: 3.2rem;
+            color: #fff;
+            line-height: 0.9;
+            margin-bottom: 5px;
+            letter-spacing: -1px;
+            font-weight: 900;
+        }
+
+        .ticket-subtitle-main {
+            color: #70b2ff;
+            font-family: var(--font-pixel);
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .ticket-info-list {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .ticket-info-item .info-label {
+            display: block;
+            font-family: var(--font-pixel);
+            font-size: 1.2rem;
+            color: #8bb3f0;
+        }
+
+        .ticket-info-item .info-val {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .ticket-promise-tag {
+            font-size: 0.85rem;
+            color: #9cb8e6;
+            border-top: 1px dashed rgba(255, 255, 255, 0.15);
+            padding-top: 15px;
+        }
+
+        .ticket-promise-tag strong {
+            color: #fff;
+        }
+
+        .ticket-stub {
+            width: 220px;
+            background: rgba(0, 0, 0, 0.35);
+            border-left: 2px dashed rgba(255, 255, 255, 0.2);
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .stub-event {
+            font-family: var(--font-pixel);
+            font-size: 2.2rem;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .stub-date {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .barcode {
+            width: 100%;
+            height: 40px;
+            background: repeating-linear-gradient(
+                90deg,
+                #fff,
+                #fff 2px,
+                transparent 2px,
+                transparent 4px,
+                #fff 4px,
+                #fff 7px,
+                transparent 7px,
+                transparent 9px
+            );
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+
+        .stub-btn {
+            background: var(--azul-tkm);
+            color: #fff;
+            font-family: var(--font-texto);
+            font-size: 0.85rem;
+            font-weight: 900;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.2s;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .real-ticket:hover .stub-btn {
+            background: #ffffff;
+            color: #000;
+        }
+
+        .media-section { text-align: center; }
+        .media-section h2 { font-size: 2.5rem; margin-bottom: 25px; }
+        
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 30px;
+            align-items: stretch;
+        }
+
+        .media-slot {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .media-item {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out, transform 0.4s ease;
+        }
+
+        .media-item.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .media-slot:hover .media-item.active { 
+            transform: scale(1.04); 
+            z-index: 2; 
+        }
+        
+        .video-item {
+            grid-column: span 1;
+            grid-row: span 2;
+            width: 100%;
+            height: 100%; 
+            aspect-ratio: 9/16; 
+            min-height: 500px; 
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            background-color: rgba(0,0,0,0.3);
+        }
+
+        /* WRAPPER Y TRANSICIÓN DE FONDO PARA ¿QUÉ ES LA TKM? */
+        .about-section-wrapper {
+            width: 100%;
+            background: linear-gradient(180deg, #081226 0%, #050814 100%);
+            border-top: 1px solid rgba(30, 100, 204, 0.3);
+            border-bottom: 1px solid rgba(30, 100, 204, 0.3);
+            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
+            margin: 70px 0;
+            padding: 60px 0;
+        }
+
+        .about-text {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #d0e0f7;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+        .pilares-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+        .pilar-card {
+            background: rgba(10, 25, 50, 0.6);
+            border: 1px solid rgba(30, 100, 204, 0.4);
+            padding: 25px 15px;
+            text-align: center;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            backdrop-filter: blur(5px);
+        }
+        .pilar-card:hover {
+            background: rgba(30, 100, 204, 0.25);
+            border-color: #ffffff;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(30, 100, 204, 0.3);
+        }
+        .pilar-card h3 { 
+            font-size: 1.25rem; 
+            color: #ffffff; 
+            margin-bottom: 10px; 
+        }
+        .pilar-card p { font-size: 0.88rem; color: #9cb8e6; margin: 0; font-weight: 600;}
+
+        .spotify-container {
+            max-width: 700px;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            transition: transform 0.3s;
+        }
+        .spotify-container:hover {
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 900px) {
+            .pilares-grid { 
+                grid-template-columns: 1fr 1fr; 
+                margin: 0 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 30px 15px; }
+            .hero { padding: 110px 15px 40px; min-height: 60vh; }
+            .hero h1 { font-size: 1.8rem; }
+            
+            .real-ticket { flex-direction: column; }
+            .ticket-stub { 
+                width: 100%; 
+                border-left: none; 
+                border-top: 2px dashed rgba(255, 255, 255, 0.15); 
+                padding: 20px;
+            }
+            .ticket-title-main { font-size: 2.2rem; }
+            .ticket-info-list { flex-direction: column; gap: 10px; }
+            
+            .media-grid { grid-template-columns: 1fr 1fr; }
+            .video-item { display: none; }
+            .about-section-wrapper { margin: 40px 0; padding: 40px 0; }
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .social-links { margin: 20px 0; }
+        .social-links a {
+            color: #fff;
+            margin: 0 15px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            transition: color 0.2s;
+        }
+        .social-links a:hover { color: #ffffff; }
+    </style>
+</head>
+<body>
+
+    <!-- TICKER SUPERIOR FIJO -->
+    <div class="top-ticker">
+        <div class="ticker-track">
+            <span class="ticker-text">
+                &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA
+            </span>
+            <span class="ticker-text">
+                &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA
+            </span>
+        </div>
+    </div>
+
+    <!-- HERO SECTION CON VIDEO EXPERIENCIA TKM -->
+    <header class="hero">
+        <video class="hero-video-bg" autoplay loop muted playsinline>
+            <source src="experiencia_tkm.mov" type="video/quicktime">
+            <source src="experiencia_tkm.mov" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="LOGO.png" alt="TKM Fiesta" class="main-logo">
+            <h1>CUMBIA & REGGAETÓN</h1>
+            <p>Empieza temprano, termina temprano</p>
+            <a href="https://entradium.com/es/events/fiesta-tkm" target="_blank" class="btn">Conseguí tu entrada</a>
+        </div>
+    </header>
+
+    <!-- TICKET FÍSICO INTERACTIVO -->
+    <div id="aniversario" class="ticket-wrapper fade-in delay-4">
+        <a href="https://entradium.com/es/events/fiesta-tkm" target="_blank" class="real-ticket">
+            <div class="ticket-main">
+                <div>
+                    <div class="ticket-title-main">CUMPLIMOS 2 AÑOS</div>
+                    <div class="ticket-subtitle-main">SE FESTEJA EN CASA</div>
+                </div>
+
+                <div class="ticket-info-list">
+                    <div class="ticket-info-item">
+                        <span class="info-label">FECHA</span>
+                        <span class="info-val">26 DE SEPTIEMBRE</span>
+                    </div>
+                    <div class="ticket-info-item">
+                        <span class="info-label">HORARIO</span>
+                        <span class="info-val">22:00 A 03:00 AM</span>
+                    </div>
+                    <div class="ticket-info-item">
+                        <span class="info-label">LUGAR</span>
+                        <span class="info-val">LA NAU (BARCELONA)</span>
+                    </div>
+                </div>
+
+                <div class="ticket-promise-tag">
+                    Promesa TKM: <strong>Espacio seguro y bajón asegurado</strong>
+                </div>
+            </div>
+
+            <div class="ticket-stub">
+                <div class="stub-event">TKM 2 AÑOS</div>
+                <div class="stub-date">26 / 09</div>
+                <div class="barcode"></div>
+                <div class="stub-btn">COMPRAR</div>
+            </div>
+        </a>
+    </div>
+
+    <!-- UNA NOCHE EN LA TKM -->
+    <section class="media-section">
+        <h2 class="fade-in">UNA NOCHE EN LA TKM</h2>
+        
+        <div class="media-grid fade-in delay-1">
+            <div class="media-slot" id="slot-1">
+                <img src="Copia de _DSC4895.jpg" class="media-item active" alt="Fiesta TKM">
+                <img src="Copia de TKM_20-03-28-2.jpg" class="media-item" alt="Fiesta TKM">
+                <img src="Copia de TKM FIESTA_16.05_157.jpg" class="media-item" alt="Fiesta TKM">
+            </div>
+            
+            <video class="video-item" autoplay loop muted playsinline>
+                <source src="recap a un mes.mp4" type="video/mp4">
+            </video>
+            
+            <div class="media-slot" id="slot-2">
+                <img src="Copia de DSC01387.jpg" class="media-item active" alt="Fiesta TKM">
+                <img src="Copia de TKM FIESTA_16.05_161.jpg" class="media-item" alt="Fiesta TKM">
+                <img src="Copia de DSC01588.jpg" class="media-item" alt="Fiesta TKM">
+            </div>
+
+            <div class="media-slot" id="slot-3">
+                <img src="Copia de TKM FIESTA_16.05_125.jpg" class="media-item active" alt="Fiesta TKM">
+                <img src="Copia de TKM FIESTA_16.05_122.jpg" class="media-item" alt="Fiesta TKM">
+                <img src="Copia de DSC01554.jpg" class="media-item" alt="Fiesta TKM">
+                <img src="Copia de _DSC4862.jpg" class="media-item" alt="Fiesta TKM">
+            </div>
+
+            <div class="media-slot" id="slot-4">
+                <img src="Copia de _DSC1900.jpg" class="media-item active" alt="Fiesta TKM">
+                <img src="Copia de TKM FIESTA_16.05_60.jpg" class="media-item" alt="Fiesta TKM">
+                <img src="Copia de _DSC1886.jpg" class="media-item" alt="Fiesta TKM">
+                <img src="Copia de DSC01420.jpg" class="media-item" alt="Fiesta TKM">
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOQUE CON TRANSICIÓN DE FONDO PARA ¿QUÉ ES LA TKM? -->
+    <div class="about-section-wrapper">
+        <section>
+            <h2 class="fade-in" style="text-align: center; font-size: 2.5rem;">¿QUÉ ES LA TKM?</h2>
+            <p class="about-text fade-in delay-1">
+                Nacimos como una idea entre amigas para revivir la música que marcó nuestra juventud, y hoy somos un espacio cuidado en Barcelona donde podés sentirte en casa, vengas de donde vengas.<br><br>
+                Nuestra regla de oro: Cumbia, reggaetón, grandes clásicos que nunca pasan de moda, amigxs y bajón asegurado.
+            </p>
+
+            <div class="pilares-grid">
+                <div class="pilar-card fade-in delay-2">
+                    <h3>TEMPRANITO</h3>
+                    <p>Sabemos lo que querés. La fiesta empieza a las 22:00 y termina a las 03:00. Bailás, la pasás increíble y al otro día seguís siendo funcional.</p>
+                </div>
+                <div class="pilar-card fade-in delay-3">
+                    <h3>CUMBIA & REGGAETÓN</h3>
+                    <p>Nacidas y criadas en los 90. Te pasamos los temazos mezclados con los hits de hoy para bajar hasta el piso.</p>
+                </div>
+                <div class="pilar-card fade-in delay-4">
+                    <h3>FERNET & ALFAJORES</h3>
+                    <p>Si estamos en casa, no falta el 2x1 de Fernet temprano y los alfajores de siempre para recargar energía en la pista.</p>
+                </div>
+                <div class="pilar-card fade-in delay-5">
+                    <h3>COMO EN CASA</h3>
+                    <p>Vení como quieras, el dress code pasó de moda. Somos una familia fiel. Acá venís a hacer amigos y sentirte cómodo.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CALENTANDO MOTORES (SPOTIFY) -->
+    <section class="media-section">
+        <h2 class="fade-in delay-2" style="margin-top: 20px; margin-bottom: 20px;">CALENTANDO MOTORES</h2>
+        <div class="spotify-container fade-in delay-3">
+            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6AcZnAWWOgzVxbAplYoytr?utm_source=generator&theme=0&si=207e08d7dfa84130" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <h2 style="margin-bottom: 10px; font-size: 2.5rem;">ESTEMOS CERQUITA</h2>
+        <p style="color: #a0aabf; margin-bottom: 0; font-weight: 800;">tkmfiesta@gmail.com</p>
+        
+        <div class="social-links">
+            <a href="https://www.instagram.com/tkmfiesta" target="_blank">INSTAGRAM</a>
+            <a href="https://www.tiktok.com/@tkm.fiesta" target="_blank">TIKTOK</a>
+        </div>
+        
+        <p style="font-size: 0.8rem; color: #555; margin-top: 30px;">Powered by TKM</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slots = document.querySelectorAll('.media-slot');
+            slots.forEach((slot, slotIndex) => {
+                const images = slot.querySelectorAll('.media-item');
+                let currentIndex = 0;
+                setInterval(() => {
+                    images[currentIndex].classList.remove('active');
+                    currentIndex = (currentIndex + 1) % images.length;
+                    images[currentIndex].classList.add('active');
+                }, 3500 + (slotIndex * 400));
+            });
+        });
+    </script>
+</body>
+</html>
