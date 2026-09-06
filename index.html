@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TKM Fiesta - Cumbia & Reggaetón</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ESTILOS BASE Y ANIMACIONES */
+        :root {
+            --azul-tkm: #0044ff;
+            --amarillo-tkm: #ffea00;
+            --bg-oscuro: #050508;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: #ffffff;
+            background-color: var(--bg-oscuro);
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(0, 68, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(255, 234, 0, 0.05) 0%, transparent 50%);
+            background-attachment: fixed;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 { margin-top: 0; text-transform: uppercase; }
+        a { text-decoration: none; }
+        section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
+
+        /* 1. HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 120px 20px 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .main-logo {
+            max-width: 400px;
+            width: 90%;
+            margin-bottom: 20px;
+            mix-blend-mode: screen; 
+            animation: float 4s ease-in-out infinite;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #a0aabf;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        /* BOTÓN PRINCIPAL */
+        .btn {
+            display: inline-block;
+            background: var(--amarillo-tkm);
+            color: #000000;
+            padding: 16px 45px;
+            font-size: 1.1rem;
+            font-weight: 900;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+            border: none;
+            box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.2);
+        }
+        .btn:hover {
+            background: #ffffff;
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px rgba(255, 255, 255, 0.4);
+        }
+
+        /* 2. PRÓXIMA FECHA (Banner Integrado) */
+        .event-banner {
+            background: linear-gradient(135deg, rgba(0, 68, 255, 0.15), rgba(0, 0, 0, 0.8));
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 60px 20px;
+            text-align: center;
+            margin: 40px 0;
+            backdrop-filter: blur(10px);
+        }
+        .event-banner h2 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .event-banner .subtitle {
+            color: var(--amarillo-tkm);
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+        .event-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .event-item span { display: block; font-size: 0.8rem; color: #a0aabf; margin-bottom: 5px; }
+        .event-item strong { font-size: 1.1rem; color: #fff; }
+
+        /* 3. QUÉ ES TKM & PILARES */
+        .about-text {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #d0d6e5;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+        .pilares-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .pilar-card {
+            background: rgba(0, 68, 255, 0.05);
+            border: 1px solid rgba(0, 68, 255, 0.3);
+            padding: 35px 25px;
+            text-align: center;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .pilar-card:hover {
+            background: rgba(0, 68, 255, 0.15);
+            border-color: var(--azul-tkm);
+            transform: translateY(-5px);
+        }
+        .pilar-card h3 { font-size: 1.5rem; color: #fff; margin-bottom: 15px; }
+        .pilar-card p { font-size: 0.95rem; color: #a0aabf; margin: 0; }
+
+        /* 4. MULTIMEDIA */
+        .media-section { text-align: center; }
+        .media-section h2 { font-size: 2.5rem; margin-bottom: 40px; }
+        
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+        .media-item {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+        .media-item:hover { transform: scale(1.03); z-index: 2; }
+        
+        .video-item {
+            grid-column: span 1;
+            grid-row: span 2;
+            height: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .spotify-container {
+            max-width: 700px;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        }
+
+        @media (max-width: 768px) {
+            .media-grid { grid-template-columns: 1fr 1fr; }
+            .video-item { grid-column: span 2; height: 400px; }
+        }
+
+        /* 5. FOOTER */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .social-links { margin: 30px 0; }
+        .social-links a {
+            color: #fff;
+            margin: 0 15px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            transition: color 0.2s;
+        }
+        .social-links a:hover { color: var(--amarillo-tkm); }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <img src="TKM LOGO BN ROJO.png" alt="TKM Fiesta" class="main-logo">
+        <h1>NO SOMOS SOLO UNA FIESTA, SOMOS TU CASA</h1>
+        <p>Cumbia, reguetón del recuerdo y perreo.<br>Empieza temprano, termina temprano.</p>
+        <a href="https://entradium.com/es/events/fiesta-tkm" target="_blank" class="btn">Conseguí tu entrada</a>
+    </header>
+
+    <!-- BANNER EVENTO -->
+    <div id="aniversario" class="event-banner">
+        <h2>2 AÑOS DE TKM</h2>
+        <div class="subtitle">SE FESTEJA EN CASA</div>
+        
+        <div class="event-grid">
+            <div class="event-item"><span>FECHA</span><strong>26 de Septiembre</strong></div>
+            <div class="event-item"><span>HORARIO</span><strong>22:00 a 03:00 AM</strong></div>
+            <div class="event-item"><span>LUGAR</span><strong>La Nau (Carrer d'Àlaba, 30)</strong></div>
+            <div class="event-item"><span>NUESTRA PROMESA</span><strong>Espacio seguro y bajón asegurado</strong></div>
+        </div>
+
+        <a href="https://entradium.com/es/events/fiesta-tkm" target="_blank" class="btn">COMPRAR TICKETS</a>
+    </div>
+
+    <!-- QUÉ ES TKM & PILARES -->
+    <section>
+        <h2 style="text-align: center; font-size: 2.5rem;">¿QUÉ ES LA TKM?</h2>
+        <p class="about-text">
+            La TKM no es cualquier fiesta. Es un reencuentro con nuestras raíces: el barrio, las previas, los amigos y las noches de los 2000. Nacimos como una idea entre amigas para revivir la música que marcó nuestra juventud, y hoy somos un espacio cuidado en Barcelona donde podés sentirte en casa, vengas de donde vengas.<br><br>
+            Nuestra regla de oro: Cumbia, reguetón del recuerdo y grandes clásicos que nunca pasan de moda.
+        </p>
+
+        <div class="pilares-grid">
+            <div class="pilar-card">
+                <h3>TEMPRANITO</h3>
+                <p>Sabemos lo que querés. La fiesta empieza a las 22:00 y termina a las 03:00. Bailás, la pasás increíble y al otro día seguís siendo funcional.</p>
+            </div>
+            <div class="pilar-card">
+                <h3>CUMBIA & REGGAETÓN</h3>
+                <p>Nacidas y criadas en los 90. Te pasamos los temazos del recuerdo mezclados con los hits de hoy para bajar hasta el piso.</p>
+            </div>
+            <div class="pilar-card">
+                <h3>FERNET & ALFAJORES</h3>
+                <p>Si estamos en casa, no falta el 2x1 de Fernet temprano y los alfajores de siempre para recargar energía en la pista.</p>
+            </div>
+            <div class="pilar-card">
+                <h3>COMO EN CASA</h3>
+                <p>Venimos haciendo sold out edición tras edición. Somos una familia fiel. Acá venís a hacer amigos y sentirte cómodo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- UNA NOCHE EN LA TKM -->
+    <section class="media-section">
+        <h2>UNA NOCHE EN LA TKM</h2>
+        
+        <div class="media-grid">
+            <img src="Copia de _DSC4895.jpg" class="media-item" alt="Fiesta TKM">
+            <video class="video-item" autoplay loop muted playsinline>
+                <source src="recap a un mes.mp4" type="video/mp4">
+            </video>
+            <img src="Copia de DSC01387.jpg" class="media-item" alt="Fiesta TKM">
+            <img src="Copia de TKM FIESTA_16.05_125.jpg" class="media-item" alt="Fiesta TKM">
+            <img src="Copia de _DSC1900.jpg" class="media-item" alt="Fiesta TKM">
+        </div>
+
+        <h2 style="margin-top: 80px; margin-bottom: 20px;">CALENTANDO MOTORES</h2>
+        <div class="spotify-container">
+            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6AcZnAWWOgzVxbAplYoytr?utm_source=generator&theme=0&si=207e08d7dfa84130" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <h2 style="margin-bottom: 10px;">ESTEMOS CERQUITA</h2>
+        <p style="color: #a0aabf; margin-bottom: 0;">tkmfiesta@gmail.com</p>
+        
+        <div class="social-links">
+            <a href="#" target="_blank">INSTAGRAM</a>
+            <a href="#" target="_blank">TIKTOK</a>
+        </div>
+        
+        <p style="font-size: 0.8rem; color: #555; margin-top: 40px;">Powered by TKM</p>
+    </footer>
+
+</body>
+</html>
