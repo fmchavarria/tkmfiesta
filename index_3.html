@@ -77,6 +77,7 @@
         section { padding: 50px 20px; max-width: 1100px; margin: 0 auto; }
 
         /* BARRA SUPERIOR INFINITA */
+        /* BARRA SUPERIOR INFINITA (OCULTA INICIALMENTE) */
         .top-ticker {
             position: fixed;
             top: 0;
@@ -92,6 +93,16 @@
             overflow: hidden;
             white-space: nowrap;
             box-shadow: 0 4px 20px rgba(30, 100, 204, 0.4);
+            opacity: 0;
+            transform: translateY(-100%);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            pointer-events: none;
+        }
+
+        .top-ticker.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
         }
         .ticker-track {
             display: inline-block;
@@ -520,7 +531,7 @@
 <body>
 
     <!-- TICKER SUPERIOR FIJO -->
-    <div class="top-ticker">
+    <div class="top-ticker" id="topTicker">
         <div class="ticker-track">
             <span class="ticker-text">
                 &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA
@@ -673,6 +684,19 @@
     </footer>
 
     <script>
+        // 1. CONTROL DE LA BARRA SUPERIOR (TICKER) AL HACER SCROLL
+        window.onscroll = function() {
+            const ticker = document.getElementById('topTicker');
+            if (ticker) {
+                if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                    ticker.classList.add('visible');
+                } else {
+                    ticker.classList.remove('visible');
+                }
+            }
+        };
+
+        // 2. ROTACIÓN AUTOMÁTICA DE FOTOS EN LA GALERÍA
         document.addEventListener('DOMContentLoaded', () => {
             const slots = document.querySelectorAll('.media-slot');
             slots.forEach((slot, slotIndex) => {
