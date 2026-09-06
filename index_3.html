@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TKM Fiesta - Cumbia & Reggaetón</title>
     
+    <!-- SEO META DESCRIPTION -->
+    <meta name="description" content="TKM Fiesta en Barcelona. Cumbia, reggaetón y fiesta. Empieza temprano, termina temprano. Conseguí tus entradas acá.">
+
     <!-- FAVICON CÍRCULO AZUL CON TKM -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%231e64cc'/><text x='50%' y='55%' font-family='sans-serif' font-weight='900' font-size='38' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>TKM</text></svg>">
 
@@ -14,7 +17,9 @@
     <meta property="og:image" content="LOGO.png">
     <meta property="og:type" content="website">
 
-    <!-- FUENTES GOOGLE -->
+    <!-- OPTIMIZACIÓN DE CARGA DE FUENTES GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=VT323&display=swap" rel="stylesheet">
     
     <style>
@@ -76,7 +81,6 @@
         a { text-decoration: none; }
         section { padding: 50px 20px; max-width: 1100px; margin: 0 auto; }
 
-        /* BARRA SUPERIOR INFINITA */
         /* BARRA SUPERIOR INFINITA (OCULTA INICIALMENTE) */
         .top-ticker {
             position: fixed;
@@ -94,15 +98,17 @@
             white-space: nowrap;
             box-shadow: 0 4px 20px rgba(30, 100, 204, 0.4);
             opacity: 0;
+            visibility: hidden;
             transform: translateY(-100%);
-            transition: opacity 0.4s ease, transform 0.4s ease;
+            transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
             pointer-events: none;
         }
 
         .top-ticker.visible {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+            pointer-events: auto !important;
         }
         .ticker-track {
             display: inline-block;
@@ -173,6 +179,7 @@
             width: 100%;
             max-width: 250px;
             min-width: 240px;
+            height: auto;
             mix-blend-mode: screen;
             padding: 10px; 
             margin-bottom: 20px;
@@ -530,14 +537,14 @@
 </head>
 <body>
 
-    <!-- TICKER SUPERIOR FIJO -->
+    <!-- TICKER SUPERIOR FIJO (CON ID PARA EL SCRIPT) -->
     <div class="top-ticker" id="topTicker">
         <div class="ticker-track">
             <span class="ticker-text">
-                &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA
+                &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA
             </span>
             <span class="ticker-text">
-                &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA
+                &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA &nbsp;·&nbsp; CUMBIA & REGGAETÓN &nbsp;·&nbsp; TU LUGAR SEGURO PARA DARLO TODO &nbsp;·&nbsp; EL REENCUENTRO DE SIEMPRE &nbsp;·&nbsp; MÁS QUE UNA FIESTA, TU CASA &nbsp;·&nbsp; VENÍ COMO QUIERAS, BAILÁ COMO NUNCA
             </span>
         </div>
     </div>
@@ -546,130 +553,133 @@
     <header class="hero">
         <video class="hero-video-bg" autoplay loop muted playsinline>
             <source src="experiencia_tkm.mov" type="video/quicktime">
-            <source src="experiencia_tkm.mov    " type="video/mp4">
+            <source src="experiencia_tkm.mov" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
 
         <div class="hero-content">
-            <img src="LOGO.png" alt="TKM Fiesta" class="main-logo">
+            <img src="LOGO.png" alt="TKM Fiesta" class="main-logo" width="250" height="250">
             <h1>CUMBIA & REGGAETÓN</h1>
             <p>Empieza temprano, termina temprano</p>
             <a href="https://entradium.com/es/events/fiesta-tkm" target="_blank" class="btn">Conseguí tu entrada</a>
         </div>
     </header>
 
-    <!-- TICKET FÍSICO INTERACTIVO -->
-    <div id="aniversario" class="ticket-wrapper fade-in delay-4">
-        <a href="https://entradium.com/es/events/fiesta-tkm" target="_blank" class="real-ticket">
-            <div class="ticket-main">
-                <div>
-                    <div class="ticket-title-main">CUMPLIMOS 2 AÑOS</div>
-                    <div class="ticket-subtitle-main">SE FESTEJA EN CASA</div>
+    <!-- MAIN LANDMARK PARA ACCESIBILIDAD Y ESTRUCTURA -->
+    <main>
+        <!-- TICKET FÍSICO INTERACTIVO -->
+        <div id="aniversario" class="ticket-wrapper fade-in delay-4">
+            <a href="https://entradium.com/es/events/fiesta-tkm" target="_blank" class="real-ticket">
+                <div class="ticket-main">
+                    <div>
+                        <div class="ticket-title-main">CUMPLIMOS 2 AÑOS</div>
+                        <div class="ticket-subtitle-main">SE FESTEJA EN CASA</div>
+                    </div>
+
+                    <div class="ticket-info-list">
+                        <div class="ticket-info-item">
+                            <span class="info-label">FECHA</span>
+                            <span class="info-val">26 DE SEPTIEMBRE</span>
+                        </div>
+                        <div class="ticket-info-item">
+                            <span class="info-label">HORARIO</span>
+                            <span class="info-val">22:00 A 03:00 AM</span>
+                        </div>
+                        <div class="ticket-info-item">
+                            <span class="info-label">LUGAR</span>
+                            <span class="info-val">LA NAU (BARCELONA)</span>
+                        </div>
+                    </div>
+
+                    <div class="ticket-promise-tag">
+                        Promesa TKM: <strong>Espacio seguro y bajón asegurado</strong>
+                    </div>
                 </div>
 
-                <div class="ticket-info-list">
-                    <div class="ticket-info-item">
-                        <span class="info-label">FECHA</span>
-                        <span class="info-val">26 DE SEPTIEMBRE</span>
-                    </div>
-                    <div class="ticket-info-item">
-                        <span class="info-label">HORARIO</span>
-                        <span class="info-val">22:00 A 03:00 AM</span>
-                    </div>
-                    <div class="ticket-info-item">
-                        <span class="info-label">LUGAR</span>
-                        <span class="info-val">LA NAU (BARCELONA)</span>
-                    </div>
+                <div class="ticket-stub">
+                    <div class="stub-event">TKM 2 AÑOS</div>
+                    <div class="stub-date">26 / 09</div>
+                    <div class="barcode"></div>
+                    <div class="stub-btn">COMPRAR</div>
                 </div>
-
-                <div class="ticket-promise-tag">
-                    Promesa TKM: <strong>Espacio seguro y bajón asegurado</strong>
-                </div>
-            </div>
-
-            <div class="ticket-stub">
-                <div class="stub-event">TKM 2 AÑOS</div>
-                <div class="stub-date">26 / 09</div>
-                <div class="barcode"></div>
-                <div class="stub-btn">COMPRAR</div>
-            </div>
-        </a>
-    </div>
-
-    <!-- UNA NOCHE EN LA TKM -->
-    <section class="media-section">
-        <h2 class="fade-in">UNA NOCHE EN LA TKM</h2>
-        
-        <div class="media-grid fade-in delay-1">
-            <div class="media-slot" id="slot-1">
-                <img src="Copia de _DSC4895.jpg" class="media-item active" alt="Fiesta TKM">
-                <img src="Copia de TKM_20-03-28-2.jpg" class="media-item" alt="Fiesta TKM">
-                <img src="Copia de TKM FIESTA_16.05_157.jpg" class="media-item" alt="Fiesta TKM">
-            </div>
-            
-            <video class="video-item" autoplay loop muted playsinline>
-                <source src="recap a un mes.mp4" type="video/mp4">
-            </video>
-            
-            <div class="media-slot" id="slot-2">
-                <img src="Copia de DSC01387.jpg" class="media-item active" alt="Fiesta TKM">
-                <img src="Copia de TKM FIESTA_16.05_161.jpg" class="media-item" alt="Fiesta TKM">
-                <img src="Copia de DSC01588.jpg" class="media-item" alt="Fiesta TKM">
-            </div>
-
-            <div class="media-slot" id="slot-3">
-                <img src="Copia de TKM FIESTA_16.05_125.jpg" class="media-item active" alt="Fiesta TKM">
-                <img src="Copia de TKM FIESTA_16.05_122.jpg" class="media-item" alt="Fiesta TKM">
-                <img src="Copia de DSC01554.jpg" class="media-item" alt="Fiesta TKM">
-                <img src="Copia de _DSC4862.jpg" class="media-item" alt="Fiesta TKM">
-            </div>
-
-            <div class="media-slot" id="slot-4">
-                <img src="Copia de _DSC1900.jpg" class="media-item active" alt="Fiesta TKM">
-                <img src="Copia de TKM FIESTA_16.05_60.jpg" class="media-item" alt="Fiesta TKM">
-                <img src="Copia de _DSC1886.jpg" class="media-item" alt="Fiesta TKM">
-                <img src="Copia de DSC01420.jpg" class="media-item" alt="Fiesta TKM">
-            </div>
+            </a>
         </div>
-    </section>
 
-    <!-- BLOQUE CON TRANSICIÓN DE FONDO PARA ¿QUÉ ES LA TKM? -->
-    <div class="about-section-wrapper">
-        <section>
-            <h2 class="fade-in" style="text-align: center; font-size: 2.5rem;">¿QUÉ ES LA TKM?</h2>
-            <p class="about-text fade-in delay-1">
-                Nacimos como una idea entre amigas para revivir la música que marcó nuestra juventud, y hoy somos un espacio cuidado en Barcelona donde podés sentirte en casa, vengas de donde vengas.<br><br>
-                Nuestra regla de oro: Cumbia, reggaetón, grandes clásicos que nunca pasan de moda, amigxs y bajón asegurado.
-            </p>
+        <!-- UNA NOCHE EN LA TKM -->
+        <section class="media-section">
+            <h2 class="fade-in">UNA NOCHE EN LA TKM</h2>
+            
+            <div class="media-grid fade-in delay-1">
+                <div class="media-slot" id="slot-1">
+                    <img src="Copia de _DSC4895.jpg" loading="lazy" width="600" height="600" class="media-item active" alt="Fiesta TKM">
+                    <img src="Copia de TKM_20-03-28-2.jpg" loading="lazy" width="600" height="600" class="media-item" alt="Fiesta TKM">
+                    <img src="Copia de TKM FIESTA_16.05_157.jpg" loading="lazy" width="600" height="600" class="media-item" alt="Fiesta TKM">
+                </div>
+                
+                <video class="video-item" autoplay loop muted playsinline>
+                    <source src="recap a un mes.mp4" type="video/mp4">
+                </video>
+                
+                <div class="media-slot" id="slot-2">
+                    <img src="Copia de DSC01387.jpg" loading="lazy" width="600" height="600" class="media-item active" alt="Fiesta TKM">
+                    <img src="Copia de TKM FIESTA_16.05_161.jpg" loading="lazy" width="600" height="600" class="media-item" alt="Fiesta TKM">
+                    <img src="Copia de DSC01588.jpg" loading="lazy" width="600" height="600" class="media-item" alt="Fiesta TKM">
+                </div>
 
-            <div class="pilares-grid">
-                <div class="pilar-card fade-in delay-2">
-                    <h3>TEMPRANITO</h3>
-                    <p>Sabemos lo que querés. La fiesta empieza a las 22:00 y termina a las 03:00. Bailás, la pasás increíble y al otro día seguís siendo funcional.</p>
+                <div class="media-slot" id="slot-3">
+                    <img src="Copia de TKM FIESTA_16.05_125.jpg" loading="lazy" width="600" height="600" class="media-item active" alt="Fiesta TKM">
+                    <img src="Copia de TKM FIESTA_16.05_122.jpg" loading="lazy" width="600" height="600" class="media-item" alt="Fiesta TKM">
+                    <img src="Copia de DSC01554.jpg" loading="lazy" width="600" height="600" class="media-item" alt="Fiesta TKM">
+                    <img src="Copia de _DSC4862.jpg" loading="lazy" width="600" height="600" class="media-item" alt="Fiesta TKM">
                 </div>
-                <div class="pilar-card fade-in delay-3">
-                    <h3>CUMBIA & REGGAETÓN</h3>
-                    <p>Nacidas y criadas en los 90. Te pasamos los temazos mezclados con los hits de hoy para bajar hasta el piso.</p>
-                </div>
-                <div class="pilar-card fade-in delay-4">
-                    <h3>FERNET & ALFAJORES</h3>
-                    <p>Si estamos en casa, no falta el 2x1 de Fernet temprano y los alfajores de siempre para recargar energía en la pista.</p>
-                </div>
-                <div class="pilar-card fade-in delay-5">
-                    <h3>COMO EN CASA</h3>
-                    <p>Vení como quieras, el dress code pasó de moda. Somos una familia fiel. Acá venís a hacer amigos y sentirte cómodo.</p>
+
+                <div class="media-slot" id="slot-4">
+                    <img src="Copia de _DSC1900.jpg" loading="lazy" width="600" height="600" class="media-item active" alt="Fiesta TKM">
+                    <img src="Copia de TKM FIESTA_16.05_60.jpg" loading="lazy" width="600" height="600" class="media-item" alt="Fiesta TKM">
+                    <img src="Copia de _DSC1886.jpg" loading="lazy" width="600" height="600" class="media-item" alt="Fiesta TKM">
+                    <img src="Copia de DSC01420.jpg" loading="lazy" width="600" height="600" class="media-item" alt="Fiesta TKM">
                 </div>
             </div>
         </section>
-    </div>
 
-    <!-- CALENTANDO MOTORES (SPOTIFY) -->
-    <section class="media-section">
-        <h2 class="fade-in delay-2" style="margin-top: 20px; margin-bottom: 20px;">CALENTANDO MOTORES</h2>
-        <div class="spotify-container fade-in delay-3">
-            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6AcZnAWWOgzVxbAplYoytr?utm_source=generator&theme=0&si=207e08d7dfa84130" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <!-- BLOQUE CON TRANSICIÓN DE FONDO PARA ¿QUÉ ES LA TKM? -->
+        <div class="about-section-wrapper">
+            <section>
+                <h2 class="fade-in" style="text-align: center; font-size: 2.5rem;">¿QUÉ ES LA TKM?</h2>
+                <p class="about-text fade-in delay-1">
+                    Nacimos como una idea entre amigas para revivir la música que marcó nuestra juventud, y hoy somos un espacio cuidado en Barcelona donde podés sentirte en casa, vengas de donde vengas.<br><br>
+                    Nuestra regla de oro: Cumbia, reggaetón, grandes clásicos que nunca pasan de moda, amigxs y bajón asegurado.
+                </p>
+
+                <div class="pilares-grid">
+                    <div class="pilar-card fade-in delay-2">
+                        <h3>TEMPRANITO</h3>
+                        <p>Sabemos lo que querés. La fiesta empieza a las 22:00 y termina a las 03:00. Bailás, la pasás increíble y al otro día seguís siendo funcional.</p>
+                    </div>
+                    <div class="pilar-card fade-in delay-3">
+                        <h3>CUMBIA & REGGAETÓN</h3>
+                        <p>Nacidas y criadas en los 90. Te pasamos los temazos mezclados con los hits de hoy para bajar hasta el piso.</p>
+                    </div>
+                    <div class="pilar-card fade-in delay-4">
+                        <h3>FERNET & ALFAJORES</h3>
+                        <p>Si estamos en casa, no falta el 2x1 de Fernet temprano y los alfajores de siempre para recargar energía en la pista.</p>
+                    </div>
+                    <div class="pilar-card fade-in delay-5">
+                        <h3>COMO EN CASA</h3>
+                        <p>Vení como quieras, el dress code pasó de moda. Somos una familia fiel. Acá venís a hacer amigos y sentirte cómodo.</p>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
+
+        <!-- CALENTANDO MOTORES (SPOTIFY) -->
+        <section class="media-section">
+            <h2 class="fade-in delay-2" style="margin-top: 20px; margin-bottom: 20px;">CALENTANDO MOTORES</h2>
+            <div class="spotify-container fade-in delay-3">
+                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6AcZnAWWOgzVxbAplYoytr?utm_source=generator&theme=0&si=207e08d7dfa84130" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <h2 style="margin-bottom: 10px; font-size: 2.5rem;">ESTEMOS CERQUITA</h2>
@@ -685,16 +695,16 @@
 
     <script>
         // 1. CONTROL DE LA BARRA SUPERIOR (TICKER) AL HACER SCROLL
-        window.onscroll = function() {
+        window.addEventListener('scroll', function() {
             const ticker = document.getElementById('topTicker');
             if (ticker) {
-                if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                if (window.scrollY > 80) {
                     ticker.classList.add('visible');
                 } else {
                     ticker.classList.remove('visible');
                 }
             }
-        };
+        });
 
         // 2. ROTACIÓN AUTOMÁTICA DE FOTOS EN LA GALERÍA
         document.addEventListener('DOMContentLoaded', () => {
